@@ -4,7 +4,8 @@ html, body {
 
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300; }
+  font-weight: 300;
+  background-color: #333333; }
 
 h1 {
   color: #c87500; }
@@ -24,13 +25,41 @@ a {
 
 .page-container {
   min-height: 100%;
-  width: 100%;
-  background-color: #333333; }
+  width: 100%; }
 
 .content-container {
   width: 600px;
-  height: 200px;
   margin: auto; }
+
+.menu {
+  height: 50px;
+  vertical-align: center;
+  background-color: gray;
+  font-family: impact;
+  font-size: 19px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+  .menu a {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    margin: auto;
+    text-align: center;
+    color: rgba(51, 51, 51, 0.8);
+    text-shadow: 1px 4px 6px gray, 0 0 0 black, 1px 4px 6px gray; }
+    .menu a.downloads {
+      -webkit-box-flex: 3;
+      -moz-box-flex: 3;
+      -webkit-flex: 3;
+      -ms-flex: 3;
+      flex: 3; }
 
 ::selection {
   background: rgba(200, 117, 0, 0.5);
@@ -38,7 +67,7 @@ a {
 
 .page-title {
   position: absolute;
-  top: 10%;
+  top: 8%;
   width: 100%;
   font-family: impact;
   text-align: center;
@@ -176,7 +205,7 @@ a {
   background-color: #333333;
   background-image: -webkit-radial-gradient(50% 50%, closest-side, transparent 0%, #333333 100%), repeating-linear-gradient(45deg, rgba(200, 117, 0, 0.5) 0px, rgba(200, 117, 0, 0.5) 50px, transparent 50px, transparent 100px);
   width: 600px;
-  height: 300px;
+  height: 320px;
   margin: auto;
   -webkit-perspective: 300;
   -webkit-perspective-origin: center center; }
@@ -192,17 +221,36 @@ a {
     bottom: 0;
     width: 600px;
     height: 385.36508px;
-    background-color: rgba(0, 150, 0, 0.5);
-    background-image: url(../img/field.svg);
+    background-color: green;
+    background-image: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%), url(../img/field.svg);
     background-size: cover;
     -webkit-transform: translateY(50%) rotateX(90deg) translateY(-50%); }
+    .soccer-container .field .goal {
+      position: absolute;
+      top: 50%; }
+      .soccer-container .field .goal.goal1 {
+        left: 6%; }
+      .soccer-container .field .goal.goal2 {
+        right: 6%; }
+      .soccer-container .field .goal .goal-inner {
+        position: absolute;
+        width: 85px;
+        height: 75px;
+        background: transparent;
+        border: solid 15px #E6CD16;
+        border-bottom: 0;
+        -webkit-transform: translateX(-50%) translateY(-50%) rotateZ(90deg) rotateX(90deg) translateY(50%) scaleY(-1); }
     .soccer-container .field .player {
       position: absolute;
       -webkit-transform-style: preserve-3d; }
+      .soccer-container .field .player.player4 .player-inner {
+        background-image: url(../img/horse.svg);
+        width: 75.67783px;
+        height: 75px; }
       .soccer-container .field .player .player-inner {
+        position: absolute;
         -webkit-transform: translateX(-50%) translateY(-50%) rotateX(90deg) translateY(50%) scaleY(-1);
         background-image: url(../img/darwin-silhouette.svg);
         background-size: cover;
         width: 65.96139px;
-        height: 100px;
-        position: absolute; }
+        height: 100px; }

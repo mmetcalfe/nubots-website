@@ -10,6 +10,7 @@ html, body {
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
+  background-color: $col-page-bg;
 }
 h1 {
   color: $col-nubots-orange;
@@ -32,19 +33,69 @@ a {
   }
 }
 
+
 .page-container {
   min-height: 100%;
   width: 100%;
-
-  background-color: $col-page-bg;
 }
 
 .content-container {
   width: $content-width;
-  height: 200px;
   //background-color:  desaturate(darken($col-nubots-orange, 10%), 10%);
   margin: auto;
 }
+
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+//noinspection CssUnknownProperty
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+//noinspection CssUnknownProperty
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+$col-menu-bg: lighten($col-page-bg, 30%);
+.menu {
+  height: 50px;
+  vertical-align: center;
+  background-color: $col-menu-bg;
+
+  font-family: impact;
+  font-size: 19px;
+
+  @include flexbox();
+  a {
+    @include flex(1);
+    &.downloads { @include flex(3); }
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+
+    margin: auto;
+    text-align: center;
+
+    color: transparentize($col-page-bg, 0.2);
+    text-shadow: 1px 4px 6px $col-menu-bg,
+                 0 0 0 #000,
+                 1px 4px 6px $col-menu-bg;
+  }
+}
+
 
 
 
@@ -56,7 +107,7 @@ a {
 
 .page-title {
   position: absolute;
-  top: 10%;
+  top: 8%;
   width: 100%;
 
   font-family: impact;
@@ -169,7 +220,7 @@ $soccer-height: $content-width * (488.72/760.92);
 
 
   width: $content-width;
-  height: 300px;
+  height: 320px;
   margin: auto;
 
   -webkit-perspective: 300;
@@ -197,28 +248,50 @@ $soccer-height: $content-width * (488.72/760.92);
     width: $content-width;
     height: $soccer-height;
 
-    background-color: rgba(0, 150, 0, 0.5);
-    background-image: url(../img/field.svg);
+    background-color: rgb(0, 128, 0);
+    background-image: linear-gradient(0deg, transparent 0%, rgba(0,0,0,0.5) 100%), url(../img/field.svg);
     background-size: cover;
     -webkit-transform: translateY(50%) rotateX(90deg) translateY(-50%);
+
+    .goal {
+      position: absolute;
+      top: 50%;
+
+      &.goal1 { left: 6%; }
+      &.goal2 { right: 6%; }
+
+      .goal-inner {
+        position: absolute;
+        width: 85px;
+        height: 75px;
+        background: transparent;
+        border: solid 15px #E6CD16;
+        border-bottom: 0;
+        -webkit-transform: translateX(-50%) translateY(-50%) rotateZ(90deg) rotateX(90deg) translateY(50%) scaleY(-1);
+      }
+    }
 
     $player-height: 100px;
     .player {
       position: absolute;
-      //width: 5px;
-      //height: 5px;
-      //background-color: red;
 
       -webkit-transform-style: preserve-3d;
 
+      &.player4 .player-inner {
+        $horse-height: $player-height * 0.75;
+        background-image: url(../img/horse.svg);
+        width: $horse-height * (273.11731 / 270.67105);
+        height: $horse-height;
+      }
+
       .player-inner {
+        position: absolute;
         -webkit-transform: translateX(-50%) translateY(-50%) rotateX(90deg) translateY(50%) scaleY(-1);
         //background-color: rgba(0, 0,255, 0.5);
         background-image: url(../img/darwin-silhouette.svg);
         background-size: cover;
         width: $player-height * (673.38 / 1020.87);
         height: $player-height;
-        position: absolute;
       }
     }
   }

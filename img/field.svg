@@ -44,7 +44,7 @@
      inkscape:zoom="0.90311108"
      inkscape:cx="135.83098"
      inkscape:cy="185.96061"
-     inkscape:window-x="0"
+     inkscape:window-x="1280"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg3101"
@@ -59,12 +59,12 @@
      width="1121.5553"
      height="719.99133"
      id="rect3103"
-     style="fill:#008000;stroke-width:0.98754936" />
+     style="fill:none;stroke-width:0.98754936000000004" />
   <!--球场框和中线-->
   <path
      d="m 561.27142,14.580371 -524.999997,0 0,679.999999 1049.999977,0 0,-679.999999 -524.99998,0 0,679.999999 z"
      id="path3105"
-     style="fill:#008000;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill:none;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none"
      inkscape:connector-curvature="0" />
   <!--中线-->
   <circle
@@ -72,7 +72,7 @@
      cy="360"
      r="91.5"
      id="circle3107"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      sodipodi:cx="575"
      sodipodi:cy="360"
      sodipodi:rx="91.5"
@@ -83,7 +83,7 @@
      cy="360"
      r="2"
      id="circle3109"
-     style="fill:#ffffff;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill:none;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none"
      sodipodi:cx="575"
      sodipodi:cy="360"
      sodipodi:rx="2"
@@ -95,7 +95,7 @@
      cy="360"
      r="2"
      id="circle3111"
-     style="fill:#ffffff;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill:none;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none"
      sodipodi:cx="160"
      sodipodi:cy="360"
      sodipodi:rx="2"
@@ -106,7 +106,7 @@
      cy="360"
      r="2"
      id="circle3113"
-     style="fill:#ffffff;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill:none;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none"
      sodipodi:cx="990"
      sodipodi:cy="360"
      sodipodi:rx="2"
@@ -116,64 +116,64 @@
   <path
      d="m 36.271423,318.98037 -10,0 0,72.2 10,0 z"
      id="path3115"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      inkscape:connector-curvature="0" />
   <path
      d="m 1086.2714,318.98037 10,0 0,72.2 -10,0 z"
      id="path3117"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      inkscape:connector-curvature="0" />
   <!--球门区-->
   <path
      d="m 36.271423,263.98037 55,0 0,182.2 -55,0 z"
      id="path3119"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      inkscape:connector-curvature="0" />
   <path
      d="m 1086.2714,263.98037 -55,0 0,182.2 55,0 z"
      id="path3121"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      inkscape:connector-curvature="0" />
   <!--禁区 -->
   <path
      d="m 36.271423,153.98037 164.999997,0 0,402.2 -164.999997,0 z"
      id="path3123"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      inkscape:connector-curvature="0" />
   <path
      d="m 1086.2714,153.98037 -164.99998,0 0,402.2 164.99998,0 z"
      id="path3125"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      inkscape:connector-curvature="0" />
   <path
      d="m 201.27142,281.45537 a 91.5,91.5 0 0 1 0,146.25 z"
      id="path3127"
-     style="fill:#008000;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill:none;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none"
      inkscape:connector-curvature="0" />
   <path
      d="m 921.27142,281.45537 a 91.5,91.5 0 0 0 0,146.25 z"
      id="path3129"
-     style="fill:#008000;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill:none;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none"
      inkscape:connector-curvature="0" />
   <!--角球弧-->
   <path
      d="m 36.271423,24.580371 a 10,10 0 0 0 10,-10 l -10,0 z"
      id="path3131"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      inkscape:connector-curvature="0" />
   <path
      d="m 46.271423,694.58037 a 10,10 0 0 0 -10,-10 l 0,10 z"
      id="path3133"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      inkscape:connector-curvature="0" />
   <path
      d="m 1086.2714,684.58037 a 10,10 0 0 0 -10,10 l 10,0 z"
      id="path3135"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      inkscape:connector-curvature="0" />
   <path
      d="m 1076.2714,14.580371 a 10,10 0 0 0 10,10 l 0,-10 z"
      id="path3137"
-     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065666;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill-opacity:0;stroke:#ffffff;stroke-width:18.44065665999999837;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
      inkscape:connector-curvature="0" />
 </svg>
