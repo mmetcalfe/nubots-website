@@ -1,0 +1,208 @@
+html, body {
+  width: 100%;
+  height: 100%; }
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300; }
+
+h1 {
+  color: #c87500; }
+
+p {
+  color: white; }
+
+a {
+  text-decoration: none; }
+  a:link {
+    color: #af6600; }
+  a:visited {
+    color: #955700; }
+  a:hover, a:active, a:focus {
+    text-decoration: underline;
+    color: #e28400; }
+
+.page-container {
+  min-height: 100%;
+  width: 100%;
+  background-color: #333333; }
+
+.content-container {
+  width: 600px;
+  height: 200px;
+  margin: auto; }
+
+::selection {
+  background: rgba(200, 117, 0, 0.5);
+  text-shadow: none; }
+
+.page-title {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  font-family: impact;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.9) 0px 0px 100px; }
+  .page-title .title {
+    -webkit-transform: scaleY(0.8);
+    letter-spacing: -0.025em;
+    font-size: 160px;
+    line-height: 0.75em;
+    margin-right: 0.05em; }
+    .page-title .title .NU {
+      margin-right: -0.15em;
+      letter-spacing: -0.04em;
+      color: white; }
+    .page-title .title .bots {
+      color: #c87500; }
+  .page-title .university {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: initial; }
+
+.soccer-base {
+  width: 600px;
+  height: 20px;
+  background-color: darkgray;
+  margin: auto; }
+
+@-webkit-keyframes path-player1 {
+  0% {
+    top: 25%;
+    left: 25%;
+    -webkit-transform: rotateZ(10deg); }
+
+  50% {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: rotateZ(50deg); }
+
+  75% {
+    top: 75%;
+    left: 50%;
+    -webkit-transform: rotateZ(0deg); }
+
+  100% {
+    top: 75%;
+    left: 75%;
+    -webkit-transform: rotateZ(200deg); } }
+
+@-webkit-keyframes path-player2 {
+  0% {
+    top: 85%;
+    left: 76%;
+    -webkit-transform: rotateZ(90deg); }
+
+  25% {
+    top: 45%;
+    left: 98%;
+    -webkit-transform: rotateZ(130deg); }
+
+  75% {
+    top: 39%;
+    left: 78%;
+    -webkit-transform: rotateZ(0deg); }
+
+  100% {
+    top: 59%;
+    left: 50%;
+    -webkit-transform: rotateZ(-80deg); } }
+
+@-webkit-keyframes path-player3 {
+  0% {
+    top: 65%;
+    left: 48%;
+    -webkit-transform: rotateZ(18deg); }
+
+  50% {
+    top: 98%;
+    left: 37%;
+    -webkit-transform: rotateZ(-25deg); }
+
+  100% {
+    top: 34%;
+    left: 27%;
+    -webkit-transform: rotateZ(56deg); } }
+
+@-webkit-keyframes path-player4 {
+  0% {
+    top: 34%;
+    left: 50%;
+    -webkit-transform: rotateZ(97deg); }
+
+  25% {
+    top: 12%;
+    left: 78%;
+    -webkit-transform: rotateZ(-29deg); }
+
+  50% {
+    top: 76%;
+    left: 50%;
+    -webkit-transform: rotateZ(18deg); }
+
+  75% {
+    top: 65%;
+    left: 23%;
+    -webkit-transform: rotateZ(-25deg); }
+
+  100% {
+    top: 37%;
+    left: 93%;
+    -webkit-transform: rotateZ(48deg); } }
+
+.player1, .player2, .player3, .player4 {
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: linear; }
+
+.player1 {
+  -webkit-animation-name: path-player1;
+  -webkit-animation-duration: 4s; }
+
+.player2 {
+  -webkit-animation-name: path-player2;
+  -webkit-animation-duration: 5s; }
+
+.player3 {
+  -webkit-animation-name: path-player3;
+  -webkit-animation-duration: 6s; }
+
+.player4 {
+  -webkit-animation-name: path-player4;
+  -webkit-animation-duration: 9s; }
+
+.soccer-container {
+  background-color: #333333;
+  background-image: -webkit-radial-gradient(50% 50%, closest-side, transparent 0%, #333333 100%), repeating-linear-gradient(45deg, rgba(200, 117, 0, 0.5) 0px, rgba(200, 117, 0, 0.5) 50px, transparent 50px, transparent 100px);
+  width: 600px;
+  height: 300px;
+  margin: auto;
+  -webkit-perspective: 300;
+  -webkit-perspective-origin: center center; }
+  .soccer-container .backdrop {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200%;
+    -webkit-transform: translateZ(-385.36508px); }
+  .soccer-container .field {
+    -webkit-transform-style: preserve-3d;
+    position: absolute;
+    bottom: 0;
+    width: 600px;
+    height: 385.36508px;
+    background-color: rgba(0, 150, 0, 0.5);
+    background-image: url(../img/field.svg);
+    background-size: cover;
+    -webkit-transform: translateY(50%) rotateX(90deg) translateY(-50%); }
+    .soccer-container .field .player {
+      position: absolute;
+      -webkit-transform-style: preserve-3d; }
+      .soccer-container .field .player .player-inner {
+        -webkit-transform: translateX(-50%) translateY(-50%) rotateX(90deg) translateY(50%) scaleY(-1);
+        background-image: url(../img/darwin-silhouette.svg);
+        background-size: cover;
+        width: 65.96139px;
+        height: 100px;
+        position: absolute; }

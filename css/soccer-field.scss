@@ -1,0 +1,225 @@
+$col-page-bg: hsl(0, 0, 20%);
+$col-nubots-orange: rgb(200, 117, 0);
+
+$content-width: 600px;
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+h1 {
+  color: $col-nubots-orange;
+}
+p {
+  color: lighten(desaturate($col-nubots-orange, 75%), 75%);
+}
+a {
+  text-decoration: none;
+
+  &:link {
+    color: darken($col-nubots-orange, 5%);
+  }
+  &:visited {
+    color: darken($col-nubots-orange, 10%);
+  }
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+    color: lighten($col-nubots-orange, 5%);
+  }
+}
+
+.page-container {
+  min-height: 100%;
+  width: 100%;
+
+  background-color: $col-page-bg;
+}
+
+.content-container {
+  width: $content-width;
+  height: 200px;
+  //background-color:  desaturate(darken($col-nubots-orange, 10%), 10%);
+  margin: auto;
+}
+
+
+
+
+::selection {
+  background: transparentize($col-nubots-orange, 0.5);
+  text-shadow: none;
+}
+
+.page-title {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+
+  font-family: impact;
+  text-align: center;
+  text-shadow: rgba(0,0,0,0.9) 0px 0px 100px;
+
+  .title {
+    -webkit-transform: scaleY(0.8);
+    letter-spacing: -0.025em;
+    font-size: 160px;
+    line-height: 0.75em;
+    margin-right: 0.05em;
+
+    .NU {
+      margin-right: -0.15em;
+      letter-spacing: -0.04em;
+      color: white;
+    }
+    .bots {
+      color: $col-nubots-orange;
+    }
+  }
+  .university {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: initial;
+  }
+}
+
+@function striped-background(
+$colour1: black,
+$colour2: green,
+$width1: 30px,
+$width2: $width1,
+$angle: 50deg) {
+  //noinspection SassScssUnresolvedFunction
+  @return repeating-linear-gradient(
+      $angle,
+      $colour1 0px,
+      $colour1 $width1, $colour2 $width1,
+      $colour2 ($width1 + $width2));
+}
+
+.soccer-base {
+  width: $content-width;
+  height: 20px;
+  background-color: darkgray;
+  margin: auto;
+}
+
+
+@mixin generate-path($path-name, $path-steps){
+  @-webkit-keyframes #{$path-name} {
+    @each $step in $path-steps {
+      #{nth($step, 1)} { top: nth($step, 2); left: nth($step, 3); -webkit-transform: rotateZ(nth($step, 4)); }
+    }
+  }
+}
+
+@include generate-path('path-player1',
+    (
+      (0%   25% 25% 10deg),
+      (50%  50% 50% 50deg),
+      (75%  75% 50% 0deg),
+      (100% 75% 75% 200deg)
+    ));
+@include generate-path('path-player2',
+    (
+      (0%   85% 76% 90deg),
+      (25%  45% 98% 130deg),
+      (75%  39% 78% 0deg),
+      (100% 59% 50% -80deg)
+    ));
+@include generate-path('path-player3',
+    (
+      (0%   65% 48% 18deg),
+      (50%  98% 37% -25deg),
+      (100% 34% 27% 56deg)
+    ));
+@include generate-path('path-player4',
+    (
+      (0%   34% 50% 97deg),
+      (25%  12% 78% -29deg),
+      (50%  76% 50% 18deg),
+      (75%  65% 23% -25deg),
+      (100% 37% 93% 48deg)
+    ));
+.player1, .player2, .player3, .player4 {
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: linear;
+}
+.player1 { -webkit-animation-name: path-player1; -webkit-animation-duration: 4s; }
+.player2 { -webkit-animation-name: path-player2; -webkit-animation-duration: 5s; }
+.player3 { -webkit-animation-name: path-player3; -webkit-animation-duration: 6s; }
+.player4 { -webkit-animation-name: path-player4; -webkit-animation-duration: 9s; }
+
+$soccer-height: $content-width * (488.72/760.92);
+.soccer-container {
+  background-color: $col-page-bg;
+  //noinspection CssShorthandPropertyValue
+  background-image:
+    -webkit-radial-gradient(50% 50%, closest-side, transparent 0%, $col-page-bg 100%),
+    striped-background(
+        transparentize($col-nubots-orange, 0.5),
+        transparent,
+        50px, 50px,
+        45deg);
+
+
+  width: $content-width;
+  height: 300px;
+  margin: auto;
+
+  -webkit-perspective: 300;
+  -webkit-perspective-origin: center center;
+
+  .backdrop {
+    //-webkit-transform-style: preserve-3d;
+
+    position: absolute;
+    bottom: 0;
+    //left: -50%;
+    width: 100%;
+    height: 200%;
+
+    //background-color: rgba(100, 100, 100, 0.5);
+    //background-image: -webkit-radial-gradient(50% 50%, closest-side, rgba(255,255,255,0.3) 0%, transparent 100%);
+    -webkit-transform: translateZ(-$soccer-height);
+  }
+
+  .field {
+    -webkit-transform-style: preserve-3d;
+
+    position: absolute;
+    bottom: 0;
+    width: $content-width;
+    height: $soccer-height;
+
+    background-color: rgba(0, 150, 0, 0.5);
+    background-image: url(../img/field.svg);
+    background-size: cover;
+    -webkit-transform: translateY(50%) rotateX(90deg) translateY(-50%);
+
+    $player-height: 100px;
+    .player {
+      position: absolute;
+      //width: 5px;
+      //height: 5px;
+      //background-color: red;
+
+      -webkit-transform-style: preserve-3d;
+
+      .player-inner {
+        -webkit-transform: translateX(-50%) translateY(-50%) rotateX(90deg) translateY(50%) scaleY(-1);
+        //background-color: rgba(0, 0,255, 0.5);
+        background-image: url(../img/darwin-silhouette.svg);
+        background-size: cover;
+        width: $player-height * (673.38 / 1020.87);
+        height: $player-height;
+        position: absolute;
+      }
+    }
+  }
+}
