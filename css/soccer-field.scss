@@ -39,12 +39,11 @@ a {
   width: 100%;
 }
 
-.content-container {
+.main-container {
   width: $content-width;
   //background-color:  desaturate(darken($col-nubots-orange, 10%), 10%);
   margin: auto;
 }
-
 
 @mixin flexbox() {
   display: -webkit-box;
@@ -80,24 +79,50 @@ $col-menu-bg: lighten($col-page-bg, 30%);
   font-size: 19px;
 
   @include flexbox();
-  a {
+  span {
     @include flex(1);
     &.downloads { @include flex(3); }
     -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
     justify-content: space-around;
 
-    margin: auto;
+    height: 100%;
+    margin:auto;
+
     text-align: center;
 
-    color: transparentize($col-page-bg, 0.2);
-    text-shadow: 1px 4px 6px $col-menu-bg,
-                 0 0 0 #000,
-                 1px 4px 6px $col-menu-bg;
+    &:hover {
+      background-color: lighten($col-menu-bg, 10%);
+    }
+
+    @include flexbox();
+    a {
+      @include flex(1);
+
+      color: transparentize($col-page-bg, 0.2);
+      text-shadow: 1px 4px 6px $col-menu-bg,
+                   0 0 0 #000,
+                   1px 4px 6px $col-menu-bg;
+
+      margin:auto;
+    }
   }
 }
 
+.content-container {
+  border: solid $col-menu-bg;
+  border-top: none;
+  border-bottom: none;
+  padding: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
-
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: $col-menu-bg;
+}
 
 
 ::selection {
@@ -196,7 +221,19 @@ $angle: 50deg) {
       (75%  65% 23% -25deg),
       (100% 37% 93% 48deg)
     ));
-.player1, .player2, .player3, .player4 {
+@include generate-path('path-ball',
+    (
+      (0%    60% 71% 0deg),
+      (12.5% 87% 49% 0deg),
+      (25%   29% 65% 0deg),
+      (37.5% 83% 12% 0deg),
+      (50%   66% 22% 0deg),
+      (62.5% 78% 99% 0deg),
+      (75%   62% 41% 0deg),
+      (87.5% 25% 53% 0deg),
+      (100%  12% 12% 0deg)
+    ));
+.player1, .player2, .player3, .player4, .ball {
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
   -webkit-animation-timing-function: linear;
@@ -205,6 +242,7 @@ $angle: 50deg) {
 .player2 { -webkit-animation-name: path-player2; -webkit-animation-duration: 5s; }
 .player3 { -webkit-animation-name: path-player3; -webkit-animation-duration: 6s; }
 .player4 { -webkit-animation-name: path-player4; -webkit-animation-duration: 9s; }
+.ball { -webkit-animation-name: path-ball; -webkit-animation-duration: 20s; }
 
 $soccer-height: $content-width * (488.72/760.92);
 .soccer-container {
@@ -292,6 +330,24 @@ $soccer-height: $content-width * (488.72/760.92);
         background-size: cover;
         width: $player-height * (673.38 / 1020.87);
         height: $player-height;
+      }
+    }
+
+    .ball {
+      position: absolute;
+      -webkit-transform-style: preserve-3d;
+      .ball-inner {
+        $ball-size: $player-height * 0.25;
+        position: absolute;
+        border-radius: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%) rotateX(90deg) translateY(50%) scaleY(-1);
+        background-color: $col-nubots-orange;
+        //background-image: url(../img/horse.svg);
+        //background-size: $ball-size * 0.75;
+        //background-repeat: no-repeat;
+        //background-position: center;
+        width: $ball-size;
+        height: $ball-size;
       }
     }
   }
