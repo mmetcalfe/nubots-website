@@ -160,6 +160,12 @@ $col-menu-bg: lighten($col-page-bg, 30%);
     text-transform: uppercase;
     color: white;
     letter-spacing: initial;
+    transition: text-shadow 0.2s ease-out;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      text-shadow: white 0px 0px 100px;
+    }
   }
 }
 
