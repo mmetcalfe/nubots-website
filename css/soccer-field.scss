@@ -93,13 +93,17 @@ $col-menu-bg: lighten($col-page-bg, 30%);
   }
 }
 
+
 .content-container {
   border: solid $col-menu-bg;
+  background-color: darken($col-menu-bg, 25%);
   border-top: none;
   border-bottom: none;
   padding: 1px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  box-shadow: inset 0 0 20px $col-page-bg;
 }
 
 .footer {
