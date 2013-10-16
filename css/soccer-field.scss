@@ -93,7 +93,6 @@ $col-menu-bg: lighten($col-page-bg, 30%);
   }
 }
 
-
 .content-container {
   border: solid $col-menu-bg;
   background-color: darken($col-menu-bg, 25%);
@@ -346,13 +345,14 @@ $soccer-height: $content-width * (488.72/760.92);
       position: absolute;
       @include transform-style(preserve-3d);
       .ball-inner {
-        $ball-size: $player-height * 0.25;
+        $ball-size: $player-height * 0.22;
         position: absolute;
         border-radius: 50%;
         @include transform(translateX(-50%) translateY(-50%) rotateX(90deg) translateY(50%) scaleY(-1));
         background-color: $col-nubots-orange;
         width: $ball-size;
         height: $ball-size;
+        border: solid 2px darken($col-nubots-orange, 20%);
       }
     }
   }
