@@ -48,6 +48,7 @@ a {
   width: $content-width;
   //background-color:  desaturate(darken($col-nubots-orange, 10%), 10%);
   margin: auto;
+  text-align: justify;
 }
 
 $col-menu-bg: lighten($col-page-bg, 30%);

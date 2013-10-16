@@ -29,7 +29,8 @@ a {
 
 .main-container {
   width: 600px;
-  margin: auto; }
+  margin: auto;
+  text-align: justify; }
 
 .menu {
   height: 50px;
