@@ -1,0 +1,72 @@
+@import 'bourbon/bourbon';
+
+@mixin generate-path($path-name, $path-steps) {
+  @include keyframes($path-name) {
+    @each $step in $path-steps {
+      #{nth($step, 1)} {
+        top: nth($step, 2);
+        left: nth($step, 3);
+        @include transform(rotateZ(nth($step, 4)));
+      }
+    }
+  }
+}
+
+@include generate-path('path-player1', (
+      (0%   25% 25% 10deg),
+      (50%  50% 50% 50deg),
+      (75%  75% 50% 0deg),
+      (100% 75% 75% 200deg)
+    ));
+@include generate-path('path-player2', (
+      (0%   85% 76% 90deg),
+      (25%  45% 98% 130deg),
+      (75%  39% 78% 0deg),
+      (100% 59% 50% -80deg)
+    ));
+@include generate-path('path-player3', (
+      (0%   65% 48% 18deg),
+      (50%  98% 37% -25deg),
+      (100% 34% 27% 56deg)
+    ));
+@include generate-path('path-player4', (
+      (0%   34% 50% 97deg),
+      (25%  12% 78% -29deg),
+      (50%  76% 50% 18deg),
+      (75%  65% 23% -25deg),
+      (100% 37% 93% 48deg)
+    ));
+@include generate-path('path-ball', (
+      (0%    60% 71% 0deg),
+      (12.5% 87% 49% 0deg),
+      (25%   29% 65% 0deg),
+      (37.5% 83% 12% 0deg),
+      (50%   66% 22% 0deg),
+      (62.5% 78% 99% 0deg),
+      (75%   62% 41% 0deg),
+      (87.5% 25% 53% 0deg),
+      (100%  12% 12% 0deg)
+    ));
+
+@mixin animation-properties($pathname, $duration) {
+  @include animation-iteration-count(infinite);
+  @include animation-direction(alternate);
+  @include animation-timing-function(linear);
+  @include animation-name($pathname);
+  @include animation-duration($duration);
+}
+.player1 {
+  @include animation-properties(path-player1, 4s);
+}
+.player2 {
+  @include animation-properties(path-player2, 5s);
+}
+.player3 {
+  @include animation-properties(path-player3, 6s);
+}
+.player4 {
+  @include animation-properties(path-player4, 9s);
+}
+.ball {
+  @include animation-properties(path-ball, 20s);
+}

@@ -1,0 +1,40 @@
+$content-width: 600px;
+
+$col-nubots-orange: rgb(200, 117, 0);
+$col-page-bg: hsl(0, 0, 20%);
+$col-menu-bg: lighten($col-page-bg, 30%);
+
+
+$soccer-height: $content-width * (488.72/760.92);
+$player-height: 100px;
+$horse-height: $player-height * 0.75;
+$ball-size: $player-height * 0.22;
+
+
+
+@function striped-background($colour1: black,
+$colour2: green,
+$width1: 30px,
+$width2: $width1,
+$angle: 50deg) {
+  //noinspection SassScssUnresolvedFunction
+  @return repeating-linear-gradient(
+      $angle,
+      $colour1 0px,
+      $colour1 $width1,
+      $colour2 $width1,
+      $colour2 ($width1 + $width2));
+}
+@function -webkit-striped-background($colour1: black,
+$colour2: green,
+$width1: 30px,
+$width2: $width1,
+$angle: 50deg) {
+  //noinspection SassScssUnresolvedFunction
+  @return -webkit-repeating-linear-gradient(
+      $angle,
+      $colour1 0px,
+      $colour1 $width1,
+      $colour2 $width1,
+      $colour2 ($width1 + $width2));
+}

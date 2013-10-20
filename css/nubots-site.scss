@@ -1,0 +1,82 @@
+@import 'bourbon/bourbon';
+@import 'flexbox-mixins';
+
+@import 'soccer-field';
+@import 'global-fonts-and-colours';
+@import 'variables';
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.page-container {
+  min-height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  width: $content-width;
+  //background-color:  desaturate(darken($col-nubots-orange, 10%), 10%);
+  margin: auto;
+  text-align: justify;
+}
+
+.menu {
+  height: 50px;
+  vertical-align: center;
+  background-color: $col-menu-bg;
+
+  font-family: impact;
+  font-size: 19px;
+
+  @include flexbox();
+  span {
+    @include flex(1);
+    &.downloads {
+      @include flex(3);
+    }
+
+    @include justify-content(space-around);
+
+    height: 100%;
+    //margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    text-align: center;
+
+    &:hover {
+      background-color: lighten($col-menu-bg, 10%);
+    }
+
+    @include flexbox();
+
+    a {
+      @include flex(1);
+
+      color: transparentize($col-page-bg, 0.2);
+      text-shadow: 1px 4px 6px $col-menu-bg, 0 0 0 #000, 1px 4px 6px $col-menu-bg;
+
+      margin: auto;
+    }
+  }
+}
+
+.content-container {
+  border: solid $col-menu-bg;
+  background-color: darken($col-menu-bg, 25%);
+  border-top: none;
+  border-bottom: none;
+  padding: 1px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  box-shadow: inset 0 0 20px $col-page-bg;
+}
+
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: $col-menu-bg;
+}

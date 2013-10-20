@@ -1,0 +1,35 @@
+@import 'variables';
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  background-color: $col-page-bg;
+}
+
+h1 {
+  color: $col-nubots-orange;
+}
+
+p {
+  color: lighten(desaturate($col-nubots-orange, 75%), 75%);
+}
+
+a {
+  text-decoration: none;
+
+  &:link {
+    color: lighten($col-nubots-orange, 10%);
+  }
+  &:visited {
+    color: darken($col-nubots-orange, 0%);
+  }
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+    color: lighten($col-nubots-orange, 20%);
+  }
+}
+
+::selection {
+  background: transparentize($col-nubots-orange, 0.5);
+  text-shadow: none;
+}
