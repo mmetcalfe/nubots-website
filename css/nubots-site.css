@@ -794,24 +794,38 @@ a {
 
 .people-container {
   line-height: 0;
-  margin-bottom: 60px; }
-
-.person {
-  display: inline-block;
-  width: 120px;
-  height: 120px;
-  background-image: url(http://placekitten.com/120/120);
-  background-image: url(http://placekitten.com/120/120);
-  background-position: center;
-  border-radius: 50%;
-  background-clip: padding-box;
-  border: solid 5px transparent;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 10px 2px black;
-  margin: 10px; }
-  .person:nth-of-type(2n) {
+  margin-bottom: 70px; }
+  .people-container .hexagon {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    margin-right: -18.75644px; }
+    .people-container .hexagon:nth-of-type(2n) {
+      position: relative;
+      top: 70px; }
+  .people-container .person {
     position: relative;
-    top: 60px; }
+    width: 140px;
+    height: 140px;
+    box-sizing: border-box;
+    border: solid 5px transparent;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 1px black;
+    background-image: url("http://placekitten.com/280/280");
+    background-image: url("http://placekitten.com/280/280");
+    background-position: center;
+    background-size: cover;
+    background-clip: padding-box;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    transition: 0.2s; }
+    .people-container .person:hover {
+      width: 280px;
+      height: 280px;
+      margin-top: -50%;
+      margin-left: -50%;
+      border: solid 10px transparent;
+      z-index: 1; }
 
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;

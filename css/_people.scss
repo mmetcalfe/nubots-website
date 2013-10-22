@@ -3,32 +3,56 @@
 @import 'global-fonts-and-colours';
 @import 'variables';
 
-$person-size: 120px;
+$person-size: 140px;
 $person-border: 5px;
+$sqrt3: 1.73205080757;
 .people-container {
   line-height: 0;
   margin-bottom: ($person-size / 2.0);
-}
-.person {
-  display: inline-block;
 
-  width: $person-size;
-  height: $person-size;
-  @include background-image(url(http://placekitten.com/120/120));
-  background-position: center;
-  border-radius: 50%;
-  background-clip: padding-box;
-  border: solid $person-border transparent;
-  box-sizing: border-box;
+  .hexagon {
+    display: inline-block;
 
-  box-shadow: 0px 0px 10px 2px black;
+    width: $person-size;
+    height: $person-size;
 
-  margin: 10px;
-  //margin-right: (($person-size / 2.0) * (sqrt(3) / 2.0));
+    $hex_side: $person-size / 2.0;
+    $hex_height: $hex_side * $sqrt3;
+    margin-right: ($hex_height / 2.0 - $hex_side) * 2;
 
-  &:nth-of-type(2n) {
+    &:nth-of-type(2n) {
+      position: relative;
+      top: $hex_side;
+    }
+  }
+
+  .person {
+    //display: inline-block;
     position: relative;
-    top: ($person-size / 2.0);
+
+    width: $person-size;
+    height: $person-size;
+    box-sizing: border-box;
+    border: solid $person-border transparent;
+
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 1px black;
+
+    @include background-image(url('http://placekitten.com/#{strip-units($person-size * 2)}/#{strip-units($person-size * 2)}'));
+    background-position: center;
+    background-size: cover;
+    background-clip: padding-box;
+
+    @include transition(0.2s);
+
+    $big_size: $person-size * 2;
+    &:hover{
+      width: $big_size;
+      height: $big_size;
+      margin-top: -50%;
+      margin-left: -50%;
+      border: solid ($person-border * 2) transparent;
+      z-index: 1;
+    }
   }
 }
-

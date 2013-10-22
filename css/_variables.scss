@@ -10,7 +10,9 @@ $player-height: 100px;
 $horse-height: $player-height * 0.75;
 $ball-size: $player-height * 0.22;
 
-
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
 
 @function striped-background($colour1: black,
 $colour2: green,
